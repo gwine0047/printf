@@ -1,11 +1,20 @@
 #include "main.h"
+/**
+ *_printf - prints out a single character
+ *@format: is a character string
+ *@...: are unknown parameters
+ *Return: the character count.
+ */
 
-int my_printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	unsigned int s,rtn = 0;
 	va_list ext;
 
 	va_start(ext, format);
+
+	if (format == NULL)
+		return (-1);
 
 	for (s = 0; format[s] != '\0'; s++)
 	{
