@@ -4,7 +4,7 @@
 int print_str(char *str)
 {
 	int a = 0, val = 0;
-	
+
 	if (str)
 	{
 		for (; str[a] != '\0'; a++)

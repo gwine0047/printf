@@ -8,7 +8,7 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int s,rtn = 0;
+	unsigned int s, rtn = 0;
 	va_list ext;
 
 	va_start(ext, format);
@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[s] != '%')
 		{
-			put_char(format[s]);	
+			put_char(format[s]);
 		}
 		else if (format[s + 1] == 'c')
 		{
@@ -30,6 +30,7 @@ int _printf(const char *format, ...)
 		else if (format[s + 1] == 's')
 		{
 			int s_rtn;
+
 			s_rtn = print_str(va_arg(ext, char*));
 			s++;
 			rtn += s_rtn - 1;
@@ -41,5 +42,5 @@ int _printf(const char *format, ...)
 		}
 		rtn++;
 	}
-	return(rtn);
+	return (rtn);
 }
