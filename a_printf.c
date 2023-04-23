@@ -9,7 +9,7 @@ int my_printf(const char *format, ...)
 
 	for (s = 0; format[s] != '\0'; s++)
 	{
-		if (format[s] != '%')
+		if (format[s] != '%' && format[s + 1] != '\0')
 		{
 			put_char(format[s]);	
 		}
