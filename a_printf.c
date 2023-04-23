@@ -23,12 +23,12 @@ int _printf(const char *format, ...)
 		{
 			put_char(format[s]);
 		}
-		else if (format[s + 1] == 'c')
+		else if (format[s] == '%' && format[s + 1] == 'c')
 		{
 			put_char(va_arg(ext, int));
 			s++;
 		}
-		else if (format[s + 1] == 's')
+		else if (format[s] == '%' && format[s + 1] == 's')
 		{
 			s_rtn = print_str(va_arg(ext, char*));
 			s++;
