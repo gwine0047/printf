@@ -30,8 +30,6 @@ int _printf(const char *format, ...)
 		}
 		else if (format[s + 1] == 's')
 		{
-			s_rtn;
-
 			s_rtn = print_str(va_arg(ext, char*));
 			s++;
 			rtn += s_rtn - 1;
@@ -43,5 +41,6 @@ int _printf(const char *format, ...)
 		}
 		rtn++;
 	}
+	va_end(ext);
 	return (rtn);
 }
