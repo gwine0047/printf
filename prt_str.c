@@ -1,10 +1,15 @@
 #include "main.h"
 #include <stdio.h>
-
+/**
+ * print_str - prints a string.
+ * @str: string to be printed.
+ *
+ * Return: string count.
+ */
 int print_str(char *str)
 {
 	int a = 0, val = 0;
-	
+
 	if (str)
 	{
 		for (; str[a] != '\0'; a++)
