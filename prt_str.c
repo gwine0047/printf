@@ -4,8 +4,11 @@
 int print_str(char *str)
 {
 	int a = 0, val = 0;
+	
+	if (!str)
+		return (-1);
 
-	if (str)
+	else
 	{
 		for (; str[a] != '\0'; a++)
 		{
