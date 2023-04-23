@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[s + 1] == '%')
 		{
-			put_char('%');
+			put_char('format[s + 1]);
 			s++;
 		}
 		rtn++;
