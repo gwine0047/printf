@@ -42,7 +42,6 @@ int _printf(const char *format, ...)
 			s++;
 		}
 		rtn++;
-		va_end(ext);
 	}
 	return (rtn);
 }
