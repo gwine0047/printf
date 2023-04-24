@@ -4,19 +4,21 @@
  * print_str - prints a string.
  * @str: string to be printed.
  *
- * Return: string count.
+ * Return: string count
  */
+
 int print_str(char *str)
 {
 	int a = 0, val = 0;
 
-	if (str)
+	if (!str)
 	{
-		for (; str[a] != '\0'; a++)
-		{
-			put_char(str[a]);
-			val += 1;
-		}
+		str = "(NULL)";
+	}
+	for (; str[a] != '\0'; a++)
+	{
+		put_char(str[a]);
+		val += 1;
 	}
 	return (val);
 }
