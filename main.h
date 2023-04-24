@@ -6,6 +6,8 @@
 #include <stdio.h>
 int put_char(char a);
 
+int put_int(int num);
+
 int _printf(const char *format, ...);
 
 int print_str(char *str);

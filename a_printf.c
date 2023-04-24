@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 		if (format[s] == '%' && format[s + 1] != '\0')
 		{	
 			s++;
-			if (format[s] == '%' || format[s] == 'c' || format[s] == 's')
+			if (format[s] == '%' || format[s] == 'c' || format[s] == 's' || format[s] == 'i' || format[s] == 'd')
 			{	
 				if (format[s] == '%')
 				{
@@ -38,6 +38,10 @@ int _printf(const char *format, ...)
 				else if (format[s] == 's')
 				{
 					total += print_str(va_arg(ext, char*));
+				}
+				else if (format[s] == 'i' || format[s] == 'd')
+				{
+					total += put_int(va_arg(ext, int));
 				}
 			}
 			else
