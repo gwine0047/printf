@@ -13,7 +13,7 @@ int print_str(char *str)
 
 	if (!str)
 	{
-		str = "(NULL)";
+		str = "(null)";
 	}
 	for (; str[a] != '\0'; a++)
 	{
