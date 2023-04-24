@@ -8,39 +8,50 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int s, rtn = 0;
-	int s_rtn;
+	unsigned int s = 0, rtn = 0;
 	va_list ext;
+	int total = 0;
 
 	va_start(ext, format);
 
 	if (format == NULL)
 		return (-1);
 
-	for (s = 0; format[s] != '\0'; s++)
+	while (format[s] != '\0')
 	{
-		if (format[s] != '%')
+		if (format[s] == '%' && format[s + 1] == '\0')
+			return (-1);
+
+		if (format[s] == '%' && format[s + 1] != '\0')
+		{	
+			s++;
+			if (format[s] == '%' || format[s] == 'c' || format[s] == 's')
+			{	
+				if (format[s] == '%')
+				{
+					total += put_char('%');
+				}
+				else if (format[s] == 'c')
+				{
+					total += put_char(va_arg(ext, int));
+				}
+				else if (format[s] == 's')
+				{
+					total += print_str(va_arg(ext, char*));
+				}
+			}
+			else
+			{	
+				put_char('%');
+				total += put_char(format[s]);
+			}
+		}
+		else 
 		{
 			put_char(format[s]);
 		}
-		else if (format[s + 1] == 'c')
-		{
-			put_char(va_arg(ext, int));
-			s++;
-		}
-		else if (format[s + 1] == 's')
-		{
-			s_rtn = print_str(va_arg(ext, char*));
-			s++;
-			rtn += s_rtn - 1;
-		}
-		else if (format[s + 1] == '%')
-		{
-			put_char(format[s + 1]);
-			s++;
-		}
-		rtn++;
+		s++;
 	}
 	va_end(ext);
-	return (rtn);
+	return (total);
 }
