@@ -42,13 +42,13 @@ int _printf(const char *format, ...)
 			}
 			else
 			{	
-				put_char('%');
+				total += put_char('%');
 				total += put_char(format[s]);
 			}
 		}
-		else 
+		else
 		{
-			put_char(format[s]);
+			total += put_char(format[s]);
 		}
 		s++;
 	}
