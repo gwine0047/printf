@@ -4,9 +4,12 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdio.h>
+
 int put_char(char a);
 
 int put_int(int num);
+
+int prt_bin(unsigned int a);
 
 int _printf(const char *format, ...);
 
