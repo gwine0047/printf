@@ -23,10 +23,10 @@ int _printf(const char *format, ...)
 			return (-1);
 
 		if (format[s] == '%' && format[s + 1] != '\0')
-		{	
+		{
 			s++;
 			if (format[s] == '%' || format[s] == 'c' || format[s] == 's' || format[s] == 'i' || format[s] == 'd' || format[s] == 'b')
-			{	
+			{
 				if (format[s] == '%')
 				{
 					total += put_char('%');
@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 				}
 			}
 			else
-			{	
+			{
 				total += put_char('%');
 				total += put_char(format[s]);
 			}
