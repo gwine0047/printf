@@ -9,12 +9,12 @@ int put_char(char a);
 
 int put_int(int num);
 
-int prt_bin(unsigned int a);
+char *prt_bin(unsigned int num);
 
 int _printf(const char *format, ...);
 
 int print_str(char *str);
 
-double approx(int plc);
+int print(const char *format, va_list ext);
 
 #endif
