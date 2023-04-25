@@ -2,11 +2,19 @@
 
 int prt_bin(unsigned int a)
 {
-	int i;
-
-	for (i = 31; i >= 0; i--)
-	{
-		put_char((a >> i & 1 ? '1' : '0'));
-	}
-	return (0);
+        int num = a;
+        int binary[sizeof(int) * 8];
+        int temp, j, i = 0;
+        while (num > 0)
+        {
+                binary[i] = num % 2;
+                num = num / 2;
+                i++;
+        }
+        temp = i;
+        for (j = temp - 1; j >= 0; j--)
+        {
+                put_char(48 + binary[j]);
+        }
+        return (i);
 }
