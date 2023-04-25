@@ -3,7 +3,7 @@
  *_printf - prints out a single character
  *@format: is a character string
  *@...: are unknown parameters
- *Return: the character count.
+ *Return: the character count
  */
 
 int _printf(const char *format, ...)
@@ -16,10 +16,16 @@ int _printf(const char *format, ...)
 
 	if (!format)
 		return (-1);
- 	total += print(format, ext);
+	total += print(format, ext);
 	va_end(ext);
 	return (total);
 }
+/**
+ * print - prints out a single character
+ * @format: pointer to a string
+ * @ext: variadic function
+ * Return: returns total
+ */
 
 int print(const char *format, va_list ext)
 {
@@ -30,10 +36,9 @@ int print(const char *format, va_list ext)
 	{
 		if (format[s] == '%' && format[s + 1] == '\0')
 			return (-1);
-
 		if (format[s] == '%' && format[s + 1] != '\0')
 		{
-				s++;
+			s++;
 			if (format[s] == '%' || format[s] == 'c' ||
 					format[s] == 's' || format[s] == 'i' ||
 					format[s] == 'd' || format[s] == 'b')
