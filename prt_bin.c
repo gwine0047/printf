@@ -8,4 +8,5 @@ int prt_bin(unsigned int a)
 	{
 		put_char((a >> i & 1 ? '1' : '0'));
 	}
+	return (0);
 }
