@@ -33,10 +33,15 @@ int print(const char *format, va_list ext)
 
 		if (format[s] == '%' && format[s + 1] != '\0')
 		{
+<<<<<<< HEAD
 				s++;
 			if (format[s] == '%' || format[s] == 'c' ||
 					format[s] == 's' || format[s] == 'i' ||
 					format[s] == 'd' || format[s] == 'b')
+=======
+			s++;
+			if (format[s] == '%' || format[s] == 'c' || format[s] == 's' || format[s] == 'i' || format[s] == 'd' || format[s] == 'b')
+>>>>>>> 832358fc7b370f250c8d1471712e410003bba1d0
 			{
 				if (format[s] == '%')
 					total += put_char('%');
